@@ -1,1 +1,1 @@
-# Algo_baek
+# Algo_baekjoon
