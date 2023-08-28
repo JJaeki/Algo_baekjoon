@@ -12,24 +12,24 @@ public class 골드5_7576_토마토 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N, M;
     static int[][] box;
-    static Queue<toma> q = new LinkedList<>();
+    static Queue<Tomato> q = new LinkedList<>();
     static int day = 0;
+    static int[] dx = {0, 0, 1, -1};
+    static int[] dy = {1, -1, 0, 0};
 
     public static void main(String[] args) throws IOException {
-        String input = br.readLine();
-        StringTokenizer st = new StringTokenizer(input);
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        M = Integer.parseInt(st.nextToken());
-        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());   // col size
+        N = Integer.parseInt(st.nextToken());   // row size
         box = new int[N][M];
         for (int i = 0; i < N; i++) {
-            String low = br.readLine();
-            st = new StringTokenizer(low);
+            st = new StringTokenizer(br.readLine());    // row
             for (int j = 0; j < M; j++) {
-                String bbb = st.nextToken();
-                box[i][j] = Integer.parseInt(bbb);
-                if (bbb.equals("1")) {
-                    q.offer(new toma(i, j, 0));
+                String col = st.nextToken();    // col
+                box[i][j] = Integer.parseInt(col);
+                if (col.equals("1")) {
+                    q.offer(new Tomato(j, i, 0));
                 }
             }
         }
@@ -51,22 +51,20 @@ public class 골드5_7576_토마토 {
     }// end main
 
     public static void bfs() {
-        int[] xrange = {1, -1, 0, 0};
-        int[] yrange = {0, 0, 1, -1};
 
         while (!q.isEmpty()) {
-            toma tomas = q.poll();
-            int nx = tomas.x;
-            int ny = tomas.y;
+            Tomato tomas = q.poll();
+            int x = tomas.x;
+            int y = tomas.y;
             int days = tomas.day + 1;
             for (int i = 0; i < 4; i++) {
-                int nnx = nx + xrange[i];
-                int nny = ny + yrange[i];
-                if (nnx >= 0 && nnx < N && nny >= 0 && nny < M) {
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+                if (nx >= 0 && nx < M && ny >= 0 && ny < N) {
                     day = days;
-                    if (box[nnx][nny] == 0) {
-                        q.offer(new toma(nnx, nny, days));
-                        box[nnx][nny] = 1;
+                    if (box[ny][nx] == 0) {
+                        q.offer(new Tomato(nx, ny, days));
+                        box[ny][nx] = 1;
                     }
                 }
             }
@@ -74,13 +72,13 @@ public class 골드5_7576_토마토 {
     }
 }
 
-class toma {
+class Tomato {
 
     int x;
     int y;
     int day;
 
-    toma(int x, int y, int day) {
+    Tomato(int x, int y, int day) {
         this.x = x;
         this.y = y;
         this.day = day;
