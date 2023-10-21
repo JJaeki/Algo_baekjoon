@@ -33,6 +33,5 @@ public class 실버2_11055_가장큰증가하는부분수열 {
             max = Math.max(i, max);
         }
         System.out.println(max);
-
     }
 }
