@@ -10,7 +10,7 @@ public class 골드5_15486_퇴사2 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        StringTokenizer st = null;
+        StringTokenizer st;
 
         int[][] arr = new int[n + 2][2];
         int[] dp = new int[n + 2];
@@ -22,7 +22,7 @@ public class 골드5_15486_퇴사2 {
             arr[i][0] = t; // 기간
             arr[i][1] = p; // 금액
         }
-
+        
         int max = -1;
         for (int i = 1; i <= n + 1; i++) {
             if (max < dp[i]) {
