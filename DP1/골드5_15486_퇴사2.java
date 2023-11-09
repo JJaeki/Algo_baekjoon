@@ -22,7 +22,7 @@ public class 골드5_15486_퇴사2 {
             arr[i][0] = t; // 기간
             arr[i][1] = p; // 금액
         }
-        
+
         int max = -1;
         for (int i = 1; i <= n + 1; i++) {
             if (max < dp[i]) {
