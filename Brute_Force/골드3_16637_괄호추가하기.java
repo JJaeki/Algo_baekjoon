@@ -3,7 +3,7 @@ package Brute_Force;
 import java.io.*;
 import java.util.ArrayList;
 
-public class 골드5_16637_괄호추가하기 {
+public class 골드3_16637_괄호추가하기 {
 
     static int ans;
     static ArrayList<Character> ops;

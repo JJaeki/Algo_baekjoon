@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class 실버3_9079_동전게임 {
+public class 실버2_9079_동전게임 {
 
     static int[] dx = {1, 1, 1, 0, 0, -1, -1, -1};
     static int[] dy = {1, 0, -1, 1, -1, 1, 0, -1};
