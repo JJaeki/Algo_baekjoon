@@ -5,7 +5,7 @@ import java.util.*;
 
 // https://www.acmicpc.net/problem/20058
 
-public class 드3_20058_마법사상어와파이어스톰 {
+public class 골드3_20058_마법사상어와파이어스톰 {
 
     private static final String SEPARATOR = " ";
     private static final int[] dx = {-1, 1, 0, 0};
